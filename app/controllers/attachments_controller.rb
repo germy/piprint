@@ -1,10 +1,11 @@
 class AttachmentsController < ApplicationController
-  before_action :set_attachment, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
+  before_action :set_attachment, only: [:show, :edit, :update, :destroy, :download]
 
   # GET /attachments
   # GET /attachments.json
   def index
-    @attachments = Attachment.all
+    @attachments = Attachment.where("user_id = ?", current_user.id)
   end
 
   # GET /attachments/1
@@ -25,7 +26,8 @@ class AttachmentsController < ApplicationController
   # POST /attachments.json
   def create
     @attachment = Attachment.new(attachment_params)
-
+    @attachment.user_id = current_user.id
+    @attachment.num_queue = 0
     respond_to do |format|
       if @attachment.save
         format.html { redirect_to @attachment, notice: 'Attachment was successfully created.' }
@@ -58,6 +60,15 @@ class AttachmentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to attachments_url, notice: 'Attachment was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+
+  def download
+    if current_user.id == @attachment.user_id then 
+      send_file @attachment.file.current_path
+    else 
+      redirect_to attachments_url 
     end
   end
 

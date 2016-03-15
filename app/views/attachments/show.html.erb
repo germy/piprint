@@ -2,7 +2,7 @@
 
 <p>
   <strong>File:</strong>
-  <%= link_to "Download File", @attachment.file_url %>
+  <%= link_to File.basename(@attachment.file_url), "/uploads/#{current_user.id}/#{File.basename(@attachment.file_url)}" %>
 </p>
 
 <p>

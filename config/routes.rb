@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
 
+  match '/uploads/:id/:basename.:extension', :controller => 'attachments', :action => 'download', :via => [:get]
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

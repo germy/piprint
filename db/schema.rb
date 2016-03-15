@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315115622) do
+ActiveRecord::Schema.define(version: 20160315131129) do
 
   create_table "attachments", force: :cascade do |t|
     t.string   "file"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160315115622) do
     t.integer  "num_queue"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "users", force: :cascade do |t|
