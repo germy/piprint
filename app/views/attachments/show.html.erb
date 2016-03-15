@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>File:</strong>
+  <%= link_to "Download File", @attachment.file_url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @attachment.user_id %>
+</p>
+
+<p>
+  <strong>Num queue:</strong>
+  <%= @attachment.num_queue %>
+</p>
+
+<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
+<%= link_to 'Back', attachments_path %>
