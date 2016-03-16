@@ -3,9 +3,31 @@
 <h1>Login</h1>
 
 <%= form_tag '/login' do %>
+  
+  <div class="row">
+    <div class="row collapse">
+      <label>Email</label>
+      <div class="small-9 columns">
+        <%= text_field_tag :email %>
+      </div>
+      <div class="small-3 columns">
+        <span class="postfix">@andrew.cmu.edu</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="row collapse">
+      <label>Password</label>
+      <div class="small-12 columns">
+         <%= password_field_tag :password %>
+      </div>
 
-  Email: <%= text_field_tag :email %> @andrew.cmu.edu
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+    </div>
+  </div>
+  
+  <div class="row">  
+    <%= submit_tag "Submit", :class=>"button right" %>
+  </div>
 
 <% end %>

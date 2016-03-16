@@ -1,24 +1,45 @@
-<div class="row text-center">
-	<h1>Welcome to AM Creamery</h1>
-</div>
 <div class="row">
-	<div class="medium-8 columns">
-		<p><img src="https://simpsonsscreenshots.files.wordpress.com/2011/05/ohthatsraspberry.png" alt="main article image"></p>
-	</div>
-	<div class="medium-4 columns">
-		<p><img src="https://static.simpsonswiki.com/images/d/db/Ice_Cream_of_Margie_%28with_the_Light_Blue_Hair%29.jpg" alt="article promo image" alt="simpsons-share"></p>
-		<p><img src="https://c1.staticflickr.com/5/4145/4982054522_0c3bb44cbb_b.jpg" alt="article promo image"></p>
-	</div>
+	<div class="medium-12 columns text-center">
+		<div class="row"><img src="https://cdn3.iconfinder.com/data/icons/text-icons-1/512/BT_print-256.png" alt="Mobile" class="text-center"></div>  
+		<div class="row"><h2>What is PiPrint?</h2></div>
+      <hr>    
+    <div class="row">
+      <b class="text-left">PiPrint allows your to print from any device with internet. 
+      Though a webportal, users send their documents to a webportal that queues their documents to the printer</b>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="row text-center">
+  <% if current_user %>
+     <%= link_to "Get Started", '/attachments', :class=> "button" %>
+  <% else %>
+    <%= link_to 'Signup', '/signup', class: "button success" %>        
+    <%= link_to 'Login', '/login', class: "button primary" %>
+  <% end %>    
+</div>
+
+  
 </div>
 <hr>
 <div class="row">
 	<div class="medium-4 columns text-center">
-		<b><img src="http://farm5.static.flickr.com/4133/4982053356_33dfe50b02.jpg" alt="Buy More">Buy More Ice Cream</b>
+		<div class="row"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/phone-128.png" alt="Mobile" class="text-center"></div>
+    <hr>    
+    <b>Print From Anywhere</b>
+    <p>PiPrint lets you print from any device with an internet connection</p>
 	</div>
 	<div class="medium-4 columns text-center">
-		<b><img src="http://31.media.tumblr.com/tumblr_m5nu02rk8C1rstqqto1_500.png" alt="Check Out Flavors">Checkout The Flavors</b>
+		<div class="row"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/vynil-128.png" alt="Mobile" class="text-center"></div>
+    <hr>    
+    <b>No Drivers Required</b>
+    <p>PiPrint uses a webportal to queue your print job, no drivers are required</p>
 	</div>
-	<div class="medium-4 columns text-center">
-		<b><img src="http://40.media.tumblr.com/f23cad59d350260a6203c6160073fa0a/tumblr_mjfke2gPVX1s32n64o1_1280.png" alt="find a store">Find a Store Near You</b>
-	</div>
+	<div class="medium-4 columns text-center">  
+		<div class="row"><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/note-128.png" alt="Mobile" class="text-center"></div>
+    <hr>
+    <b>Re-Queue Your Print Jobs</b>
+    <p>PiPrint lets you re-queue your print job an unlimited number of times</p>
+	</div>  
 </div>

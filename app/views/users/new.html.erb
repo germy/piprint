@@ -2,12 +2,50 @@
 
 <h1>Signup!</h1>
 
-<%= form_for :user, url: '/users' do |f| %>
+<%= simple_form_for :user, url: '/users' do |f| %>
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>@andrew.cmu.edu
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
+  <div class="row">
+    <div class="row collapse">
+      <label>Name</label>    
+      <div class="small-12 columns">
+         <%= f.text_field :name %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="row collapse">
+      <label>Emaill</label>
+      <div class="small-9 columns">
+        <%= f.text_field :email %>
+      </div>
+      <div class="small-3 columns">
+        <span class="postfix">@andrew.cmu.edu</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="row collapse">
+      <label>Password (Must include atleast 7 characters and one number)</label>
+      <div class="small-12 columns">
+         <%= f.password_field :password %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="row collapse">
+      <label>Password Confirmation</label>
+      <div class="small-12 columns">
+        <%= f.password_field :password_confirmation %></span>
+      </div>
+    </div>
+  </div>  
+  
+  <div class="row">  
+    <%= submit_tag "Submit", :class=>"button right" %>
+  </div>  
+  
+  
 <% end %>

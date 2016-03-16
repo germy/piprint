@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root to: 'home#index'
+  
+  get 'about', to: 'home#about'
 
   #accounts signin/signup
 
