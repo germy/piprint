@@ -7,16 +7,16 @@
     <tr>
       <th>File</th>
       <th>Number of Times Queued</th>
-      <th colspan="2"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @attachments.each do |attachment| %>
       <tr>
-        <td><%= attachment.file %></td>
+        <td><%= link_to File.basename(attachment.file_url), "/uploads/#{current_user.id}/#{File.basename(attachment.file_url)}" %></td>
         <td><%= attachment.num_queue %></td>
-        <td>Add to Queue</td>
+        <td><a class="button">Add to Queue</a></td>
       </tr>
     <% end %>
   </tbody>
