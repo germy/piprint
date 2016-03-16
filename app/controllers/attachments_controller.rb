@@ -1,6 +1,6 @@
 class AttachmentsController < ApplicationController
   before_filter :authorize
-  before_action :set_attachment, only: [:show, :edit, :update, :destroy, :download]
+  before_action :set_attachment, only: [:show, :edit, :update, :destroy, :download, :queue]
 
   # GET /attachments
   # GET /attachments.json
@@ -20,6 +20,12 @@ class AttachmentsController < ApplicationController
 
   # GET /attachments/1/edit
   def edit
+  end
+
+  def queue
+    @attachment.update_attribute("num_queue", @attachment.num_queue + 1)
+    flash[:notice] = "#{@attachment.file} has been queued"
+    redirect_to attachments_path
   end
 
   # POST /attachments

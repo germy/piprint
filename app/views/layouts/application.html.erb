@@ -16,9 +16,7 @@
 
     <div style="clear:both;"></div>
       <div id="body">
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, id: "flash_#{name}" %>
-        <% end %>
+       
         <%= yield %>
       </div> <!-- end of body div -->
 

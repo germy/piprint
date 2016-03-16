@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to File.basename(attachment.file_url), "/uploads/#{current_user.id}/#{File.basename(attachment.file_url)}" %></td>
         <td><%= attachment.num_queue %></td>
-        <td><a class="button">Add to Queue</a></td>
+        <td><%= link_to 'Add to Queue', "attachments/#{attachment.id}/queue", class:"button" %></td>
       </tr>
     <% end %>
   </tbody>
