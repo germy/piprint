@@ -1,7 +1,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">PiPrint</a></h1>
+      <h1><%= link_to 'PiPrint', home_index_path %></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -20,7 +20,7 @@
 
     <!-- Left Nav Section -->
     <ul class="left">
-      <li><%= link_to 'About', 'home#about' %></li>
+      <li><%= link_to 'About', about_path %></li>
       <li><%= link_to 'Queue', attachments_path %></li>
       <li><%= link_to 'Upload', new_attachment_path %></li>      
     </ul>
