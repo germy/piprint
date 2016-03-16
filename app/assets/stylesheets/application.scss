@@ -119,6 +119,7 @@ label {
 
 .white a:visited, .white{
   color:#fff;
+  margin-bottom: 0px;
 }
 
 #flash_notice{
@@ -131,6 +132,11 @@ label {
   margin-top:21px;
 }
 
-a:visited {
+a:visited{
   color:#fff;
+}
+
+.black:visited, .black:hover{
+  color:#666;
+  background-color:#fff;
 }

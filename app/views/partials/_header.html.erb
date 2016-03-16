@@ -11,7 +11,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li><% if current_user %>
-        <span class="white">Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout', :class=> "white" %></span>
+        <p class="white">Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout', :class=> "white" %></p>
       <% else %>
         <li><%= link_to 'Login', '/login' %></li>
         <li><%= link_to 'Signup', '/signup' %></li>
