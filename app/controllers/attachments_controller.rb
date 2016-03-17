@@ -24,7 +24,11 @@ class AttachmentsController < ApplicationController
 
   def queue
     @attachment.update_attribute("num_queue", @attachment.num_queue + 1)
-    system("python ~/piprint/scripts/test.py")
+    @user = "lpd://"+"#{User.find(@attachment.user_id).email}"+"@printing.andrew.cmu.edu/andrew"
+    system("echo lpadmin -p andrewbw -v #{@user}")
+    system("lpadmin -p andrewbw -v #{@user}")
+    system("echo lpr -P andrewbw ~/piprint/uploads/#{@attachment.id}/#{File.basename(@attachment.file_url)}")
+    system("lpr -P andrewbw ~/piprint/uploads/#{@attachment.id}/#{File.basename(@attachment.file_url)}")
     flash[:notice] = "#{@attachment.file} has been queued"
     redirect_to attachments_path
   end
@@ -37,7 +41,7 @@ class AttachmentsController < ApplicationController
     @attachment.num_queue = 0
     respond_to do |format|
       if @attachment.save
-        format.html { redirect_to @attachment, notice: 'Attachment was successfully created.' }
+        format.html { redirect_to attachments_path, notice: 'Attachment was successfully created.' }
         format.json { render :show, status: :created, location: @attachment }
       else
         format.html { render :new }

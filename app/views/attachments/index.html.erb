@@ -14,7 +14,7 @@
   <tbody>
     <% @attachments.each do |attachment| %>
       <tr>
-        <td><%= link_to File.basename(attachment.file_url), "/uploads/#{current_user.id}/#{File.basename(attachment.file_url)}" %></td>
+        <td><%= link_to File.basename(attachment.file_url), "/uploads/#{attachment.id}/#{File.basename(attachment.file_url)}" %></td>
         <td><%= attachment.num_queue %></td>
         <td><%= link_to 'Add to Queue', "attachments/#{attachment.id}/queue", class:"button" %></td>
       </tr>
