@@ -24,6 +24,7 @@ class AttachmentsController < ApplicationController
 
   def queue
     @attachment.update_attribute("num_queue", @attachment.num_queue + 1)
+    system("python ~/piprint/scripts/test.py")
     flash[:notice] = "#{@attachment.file} has been queued"
     redirect_to attachments_path
   end
